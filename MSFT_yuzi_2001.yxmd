@@ -1,0 +1,3941 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.4">
+  <Nodes>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="205.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>MSFT_monthly_2001.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Date" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Adj_Close" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="nasdaq" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="sp500" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="dow30" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="rev_msft" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="rev_appl" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="rev_ibm" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="GDP_change" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="mkt_cycle" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="econ_cycle" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="int_rate" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="c_sentiment" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\MSFT_monthly_2001.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="162" y="205.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="Adj_Close" />
+            <Field name="nasdaq" />
+            <Field name="sp500" />
+            <Field name="dow30" />
+            <Field name="rev_msft" />
+            <Field name="rev_appl" />
+            <Field name="rev_ibm" />
+            <Field name="c_sentiment" />
+            <Field name="GDP_change" selected="False" />
+            <Field name="mkt_cycle" selected="False" />
+            <Field name="econ_cycle" selected="False" />
+            <Field name="int_rate" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <NewFieldAddOn>LOG_</NewFieldAddOn>
+          <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+          <CopyOutput value="True" />
+          <Expression>LOG([_CurrentField_])</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>LOG([_CurrentField_])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="282" y="205.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="nasdaq" />
+            <Field name="sp500" />
+            <Field name="dow30" />
+            <Field name="Adj_Close" selected="False" />
+            <Field name="rev_msft" selected="False" />
+            <Field name="rev_appl" selected="False" />
+            <Field name="rev_ibm" selected="False" />
+            <Field name="GDP_change" selected="False" />
+            <Field name="mkt_cycle" selected="False" />
+            <Field name="econ_cycle" selected="False" />
+            <Field name="int_rate" selected="False" />
+            <Field name="LOG_Adj_Close" selected="False" />
+            <Field name="LOG_nasdaq" selected="False" />
+            <Field name="LOG_sp500" selected="False" />
+            <Field name="LOG_dow30" selected="False" />
+            <Field name="LOG_rev_msft" selected="False" />
+            <Field name="LOG_rev_appl" selected="False" />
+            <Field name="LOG_rev_ibm" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <NewFieldAddOn>Squared_</NewFieldAddOn>
+          <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+          <CopyOutput value="True" />
+          <Expression>[_CurrentField_]*[_CurrentField_]</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[_CurrentField_]*[_CurrentField_]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1950" y="685.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_11900_6e75c420379f4f9fa3a571478c3ca4d1_\Engine_10096_7f748cbd645546159b02c48898179ec4_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1854" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="1950" y="529.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>year_end_forecast_2001data.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Date" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="sp500" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="nasdaq" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="dow30" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="GDP_change" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="rev_msft" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="rev_appl" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="rev_ibm" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="mkt_cycle" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="econ_cycle" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="int_rate" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="c_sentiment" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\year_end_forecast_2001data.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="2046" y="529.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="sp500" />
+            <Field name="nasdaq" />
+            <Field name="dow30" />
+            <Field name="rev_msft" />
+            <Field name="rev_appl" />
+            <Field name="rev_ibm" />
+            <Field name="c_sentiment" />
+            <Field name="GDP_change" selected="False" />
+            <Field name="mkt_cycle" selected="False" />
+            <Field name="econ_cycle" selected="False" />
+            <Field name="int_rate" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <NewFieldAddOn>LOG_</NewFieldAddOn>
+          <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+          <CopyOutput value="True" />
+          <Expression>LOG([_CurrentField_])</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>LOG([_CurrentField_])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="2130" y="529.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Numeric</FieldType>
+          <Fields orderChanged="False">
+            <Field name="sp500" />
+            <Field name="nasdaq" />
+            <Field name="dow30" />
+            <Field name="GDP_change" selected="False" />
+            <Field name="rev_msft" selected="False" />
+            <Field name="rev_appl" selected="False" />
+            <Field name="rev_ibm" selected="False" />
+            <Field name="mkt_cycle" selected="False" />
+            <Field name="econ_cycle" selected="False" />
+            <Field name="int_rate" selected="False" />
+            <Field name="c_sentiment" selected="False" />
+            <Field name="LOG_sp500" selected="False" />
+            <Field name="LOG_nasdaq" selected="False" />
+            <Field name="LOG_dow30" selected="False" />
+            <Field name="LOG_rev_msft" selected="False" />
+            <Field name="LOG_rev_appl" selected="False" />
+            <Field name="LOG_rev_ibm" selected="False" />
+            <Field name="LOG_c_sentiment" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <NewFieldAddOn>Squared_</NewFieldAddOn>
+          <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+          <CopyOutput value="True" />
+          <Expression>[_CurrentField_]*[_CurrentField_]</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[_CurrentField_]*[_CurrentField_]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="Score">
+        <Position x="2274" y="289.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="modelChoice">Local Model</Value>
+          <Value name="score field">score_MODEL1</Value>
+          <Value name="is oversampled">False</Value>
+          <Value name="oversampled value">
+          </Value>
+          <Value name="original percent">2</Value>
+          <Value name="log y">False</Value>
+          <Value name="prediction.interval">False</Value>
+          <Value name="interval.level">95</Value>
+          <Value name="append.xdf">False</Value>
+          <Value name="num.records">256000</Value>
+          <Value name="credentials">
+          </Value>
+          <Value name="models">
+          </Value>
+          <Value name="page">
+          </Value>
+          <Value name="errorStatus">
+          </Value>
+          <Value name="modelDetailJSON">
+          </Value>
+          <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+          <Value name="promoteURL">
+          </Value>
+          <Value name="username">
+          </Value>
+          <Value name="model_name">
+          </Value>
+          <Value name="model_owner">
+          </Value>
+          <Value name="apiKey">
+          </Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+    </Node>
+    <Node ToolID="105">
+      <GuiSettings Plugin="Score">
+        <Position x="2286" y="433.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="modelChoice">Local Model</Value>
+          <Value name="score field">score_MODEL2</Value>
+          <Value name="is oversampled">False</Value>
+          <Value name="oversampled value">
+          </Value>
+          <Value name="original percent">2</Value>
+          <Value name="log y">False</Value>
+          <Value name="prediction.interval">False</Value>
+          <Value name="interval.level">95</Value>
+          <Value name="append.xdf">False</Value>
+          <Value name="num.records">256000</Value>
+          <Value name="credentials">
+          </Value>
+          <Value name="models">
+          </Value>
+          <Value name="page">
+          </Value>
+          <Value name="errorStatus">
+          </Value>
+          <Value name="modelDetailJSON">
+          </Value>
+          <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+          <Value name="promoteURL">
+          </Value>
+          <Value name="username">
+          </Value>
+          <Value name="model_name">
+          </Value>
+          <Value name="model_owner">
+          </Value>
+          <Value name="apiKey">
+          </Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+    </Node>
+    <Node ToolID="106">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2370" y="289.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="exp([score_MODEL1])" field="adj_close_MODEL1" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[adj_close_MODEL1 = exp([score_MODEL1])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="107">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2382" y="421.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="exp([score_MODEL2])" field="adj_close_MODEL2" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[adj_close_MODEL2 = exp([score_MODEL2])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="Score">
+        <Position x="2214" y="841.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="modelChoice">Local Model</Value>
+          <Value name="score field">score_MODEL3</Value>
+          <Value name="is oversampled">False</Value>
+          <Value name="oversampled value">
+          </Value>
+          <Value name="original percent">2</Value>
+          <Value name="log y">False</Value>
+          <Value name="prediction.interval">False</Value>
+          <Value name="interval.level">95</Value>
+          <Value name="append.xdf">False</Value>
+          <Value name="num.records">256000</Value>
+          <Value name="credentials">
+          </Value>
+          <Value name="models">
+          </Value>
+          <Value name="page">
+          </Value>
+          <Value name="errorStatus">
+          </Value>
+          <Value name="modelDetailJSON">
+          </Value>
+          <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+          <Value name="promoteURL">
+          </Value>
+          <Value name="username">
+          </Value>
+          <Value name="model_name">
+          </Value>
+          <Value name="model_owner">
+          </Value>
+          <Value name="apiKey">
+          </Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+    </Node>
+    <Node ToolID="110">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2358" y="841.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="exp([score_MODEL3])" field="adj_close_MODEL3" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[adj_close_MODEL3 = exp([score_MODEL3])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2490" y="301.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="sp500" selected="False" />
+            <SelectField field="nasdaq" selected="False" />
+            <SelectField field="dow30" selected="False" />
+            <SelectField field="GDP_change" selected="False" />
+            <SelectField field="rev_msft" selected="False" />
+            <SelectField field="rev_appl" selected="False" />
+            <SelectField field="rev_ibm" selected="False" />
+            <SelectField field="mkt_cycle" selected="False" />
+            <SelectField field="econ_cycle" selected="False" />
+            <SelectField field="int_rate" selected="False" />
+            <SelectField field="c_sentiment" selected="False" />
+            <SelectField field="LOG_sp500" selected="False" />
+            <SelectField field="LOG_nasdaq" selected="False" />
+            <SelectField field="LOG_dow30" selected="False" />
+            <SelectField field="LOG_rev_msft" selected="False" />
+            <SelectField field="LOG_rev_appl" selected="False" />
+            <SelectField field="LOG_rev_ibm" selected="False" />
+            <SelectField field="LOG_c_sentiment" selected="False" />
+            <SelectField field="Squared_sp500" selected="False" />
+            <SelectField field="Squared_nasdaq" selected="False" />
+            <SelectField field="Squared_dow30" selected="False" />
+            <SelectField field="score_MODEL1" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2502" y="421.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="sp500" selected="False" />
+            <SelectField field="nasdaq" selected="False" />
+            <SelectField field="dow30" selected="False" />
+            <SelectField field="GDP_change" selected="False" />
+            <SelectField field="rev_msft" selected="False" />
+            <SelectField field="rev_appl" selected="False" />
+            <SelectField field="rev_ibm" selected="False" />
+            <SelectField field="mkt_cycle" selected="False" />
+            <SelectField field="econ_cycle" selected="False" />
+            <SelectField field="int_rate" selected="False" />
+            <SelectField field="c_sentiment" selected="False" />
+            <SelectField field="LOG_sp500" selected="False" />
+            <SelectField field="LOG_nasdaq" selected="False" />
+            <SelectField field="LOG_dow30" selected="False" />
+            <SelectField field="LOG_rev_msft" selected="False" />
+            <SelectField field="LOG_rev_appl" selected="False" />
+            <SelectField field="LOG_rev_ibm" selected="False" />
+            <SelectField field="LOG_c_sentiment" selected="False" />
+            <SelectField field="Squared_sp500" selected="False" />
+            <SelectField field="Squared_nasdaq" selected="False" />
+            <SelectField field="Squared_dow30" selected="False" />
+            <SelectField field="score_MODEL2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="114">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2478" y="841.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="sp500" selected="False" />
+            <SelectField field="nasdaq" selected="False" />
+            <SelectField field="dow30" selected="False" />
+            <SelectField field="GDP_change" selected="False" />
+            <SelectField field="rev_msft" selected="False" />
+            <SelectField field="rev_appl" selected="False" />
+            <SelectField field="rev_ibm" selected="False" />
+            <SelectField field="mkt_cycle" selected="False" />
+            <SelectField field="econ_cycle" selected="False" />
+            <SelectField field="int_rate" selected="False" />
+            <SelectField field="c_sentiment" selected="False" />
+            <SelectField field="LOG_sp500" selected="False" />
+            <SelectField field="LOG_nasdaq" selected="False" />
+            <SelectField field="LOG_dow30" selected="False" />
+            <SelectField field="LOG_rev_msft" selected="False" />
+            <SelectField field="LOG_rev_appl" selected="False" />
+            <SelectField field="LOG_rev_ibm" selected="False" />
+            <SelectField field="LOG_c_sentiment" selected="False" />
+            <SelectField field="Squared_sp500" selected="False" />
+            <SelectField field="Squared_nasdaq" selected="False" />
+            <SelectField field="Squared_dow30" selected="False" />
+            <SelectField field="score_MODEL3" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="116">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JoinMultiple.JoinMultiple">
+        <Position x="2730" y="649.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JoinByRecPos value="False" />
+          <JoinFields>
+            <JoinInfo connection="#1">
+              <Field field="Date" />
+            </JoinInfo>
+            <JoinInfo connection="#2">
+              <Field field="Date" />
+            </JoinInfo>
+            <JoinInfo connection="#3">
+              <Field field="Date" />
+            </JoinInfo>
+          </JoinFields>
+          <CartesianMode>Error</CartesianMode>
+          <OutputJoinOnly value="False" />
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Input_#2_Date" selected="False" rename="Input_#2_Date" />
+                <SelectField field="Input_#3_Date" selected="False" rename="Input_#3_Date" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoinMultiple" />
+    </Node>
+    <Node ToolID="117">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2838" y="661.9998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="0.3*[adj_close_MODEL1]+0.3*[adj_close_MODEL2]+0.4*[adj_close_MODEL3]" field="Weighted_adj_close" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Weighted_adj_close = 0.3*[adj_close_MODEL1]+0.3*[adj_close_MODEL2]+0.4*[adj_clos...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="118">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2934" y="666" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_11900_6e75c420379f4f9fa3a571478c3ca4d1_\Engine_10096_34755de181a34caa9132f676302d1bc3_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="136">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="377" y="82" width="175.071" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Association Analysis</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="125">
+          <GuiSettings>
+            <Position x="402" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="do target">True</Value>
+              <Value name="target">Adj_Close</Value>
+              <Value name="target level" />
+              <Value name="use fields">"nasdaq","sp500","dow30","rev_msft","rev_appl","rev_ibm","GDP_change","mkt_cycle","econ_cycle","int_rate","c_sentiment"</Value>
+              <Value name="Pearson">True</Value>
+              <Value name="Spearman">False</Value>
+              <Value name="Hoeffding">False</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Association_Analysis.yxmc" />
+        </Node>
+        <Node ToolID="126">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="498" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_2cd5ac7ffec542c99bc67b6e6e470302_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints />
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="127">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="498" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_4914829ef50a4f63b945cdd5a3ff6b5a_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="149">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3041" y="130" width="150.9386" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Tableau Extract</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="128">
+          <GuiSettings>
+            <Position x="3162" y="174.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Model Coefficients.yxmc" />
+        </Node>
+        <Node ToolID="129">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="3258" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields />
+              <HeaderField field="Variable" />
+              <DataField field="Coefficient" />
+              <Methods>
+                <Method method="Sum" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="_Intercept_" source="CrossTab:Header:Variable:(Intercept):Sum:" type="Double" />
+                <Field name="dow30" source="CrossTab:Header:Variable:dow30:Sum:" type="Double" />
+                <Field name="econ_cycle" source="CrossTab:Header:Variable:econ_cycle:Sum:" type="Double" />
+                <Field name="LOG_rev_ibm" source="CrossTab:Header:Variable:LOG_rev_ibm:Sum:" type="Double" />
+                <Field name="LOG_rev_msft" source="CrossTab:Header:Variable:LOG_rev_msft:Sum:" type="Double" />
+                <Field name="mkt_cycle" source="CrossTab:Header:Variable:mkt_cycle:Sum:" type="Double" />
+                <Field name="nasdaq" source="CrossTab:Header:Variable:nasdaq:Sum:" type="Double" />
+                <Field name="rev_appl" source="CrossTab:Header:Variable:rev_appl:Sum:" type="Double" />
+                <Field name="rev_msft" source="CrossTab:Header:Variable:rev_msft:Sum:" type="Double" />
+                <Field name="sp500" source="CrossTab:Header:Variable:sp500:Sum:" type="Double" />
+                <Field name="Squared_dow30" source="CrossTab:Header:Variable:Squared_dow30:Sum:" type="Double" />
+                <Field name="Squared_nasdaq" source="CrossTab:Header:Variable:Squared_nasdaq:Sum:" type="Double" />
+                <Field name="Squared_sp500" source="CrossTab:Header:Variable:Squared_sp500:Sum:" type="Double" />
+              </RecordInfo>
+              <SortInfo>
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="130">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="3150" y="317.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="exp([score_1])" field="Score" size="8" type="Double" />
+                <FormulaField expression="&quot;Historical&quot;" field="Type" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Score = exp([score_1])
+Type = "Historical"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="131">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3246" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="True" type="Date" size="10" />
+                <SelectField field="GDP_change" selected="False" />
+                <SelectField field="int_rate" selected="False" />
+                <SelectField field="LOG_Adj_Close" selected="False" />
+                <SelectField field="LOG_nasdaq" selected="False" />
+                <SelectField field="LOG_sp500" selected="False" />
+                <SelectField field="LOG_dow30" selected="False" />
+                <SelectField field="LOG_rev_msft" selected="False" />
+                <SelectField field="LOG_rev_appl" selected="False" />
+                <SelectField field="LOG_rev_ibm" selected="False" />
+                <SelectField field="LOG_c_sentiment" selected="False" />
+                <SelectField field="Squared_nasdaq" selected="False" />
+                <SelectField field="Squared_sp500" selected="False" />
+                <SelectField field="Squared_dow30" selected="False" />
+                <SelectField field="score_1" selected="False" />
+                <SelectField field="Score" selected="True" rename="adj_close_Modeled" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="132">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3246" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="True" type="Date" size="10" />
+                <SelectField field="GDP_change" selected="False" />
+                <SelectField field="int_rate" selected="False" />
+                <SelectField field="c_sentiment" selected="False" />
+                <SelectField field="adj_close_MODEL1" selected="True" rename="adj_close_Modeled" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="133">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="3150" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;Forecast&quot;" field="Type" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Type = "Forecast"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="134">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="3342" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="135">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3066" y="413.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="LOG_sp500" selected="False" />
+                <SelectField field="LOG_nasdaq" selected="False" />
+                <SelectField field="LOG_dow30" selected="False" />
+                <SelectField field="LOG_rev_msft" selected="False" />
+                <SelectField field="LOG_rev_appl" selected="False" />
+                <SelectField field="LOG_rev_ibm" selected="False" />
+                <SelectField field="LOG_c_sentiment" selected="False" />
+                <SelectField field="Squared_sp500" selected="False" />
+                <SelectField field="Squared_nasdaq" selected="False" />
+                <SelectField field="Squared_dow30" selected="False" />
+                <SelectField field="score_MODEL1" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="137">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="3162" y="570.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Date" action="Max" rename="Date_Current" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="141">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3546" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="sp500" selected="False" />
+                <SelectField field="nasdaq" selected="False" />
+                <SelectField field="dow30" selected="False" />
+                <SelectField field="GDP_change" selected="False" />
+                <SelectField field="rev_msft" selected="False" />
+                <SelectField field="rev_appl" selected="False" />
+                <SelectField field="rev_ibm" selected="False" />
+                <SelectField field="mkt_cycle" selected="False" />
+                <SelectField field="econ_cycle" selected="False" />
+                <SelectField field="int_rate" selected="False" />
+                <SelectField field="c_sentiment" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="142">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="3258" y="654" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Date_Current" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Date" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Date_Current" selected="True" />
+                    <SelectField field="Right_nasdaq" selected="True" input="Right_" />
+                    <SelectField field="Right_sp500" selected="True" input="Right_" />
+                    <SelectField field="Right_dow30" selected="True" input="Right_" />
+                    <SelectField field="Right_rev_msft" selected="True" input="Right_" />
+                    <SelectField field="Right_mkt_cycle" selected="True" input="Right_" />
+                    <SelectField field="Right_econ_cycle" selected="True" input="Right_" />
+                    <SelectField field="Right_LOG_rev_msft" selected="True" input="Right_" />
+                    <SelectField field="Right_LOG_rev_ibm" selected="True" input="Right_" />
+                    <SelectField field="Right_Squared_nasdaq" selected="True" input="Right_" />
+                    <SelectField field="Right_Squared_sp500" selected="True" input="Right_" />
+                    <SelectField field="Right_Squared_dow30" selected="True" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="143">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3546" y="522" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="GDP_change" selected="False" />
+                <SelectField field="int_rate" selected="False" />
+                <SelectField field="c_sentiment" selected="False" />
+                <SelectField field="Type" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="144">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="3642" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="145">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="3738" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Error</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Source_nasdaq" selected="True" rename="nasdaq_current" input="Source_" />
+                    <SelectField field="Source_sp500" selected="True" rename="sp500_current" input="Source_" />
+                    <SelectField field="Source_dow30" selected="True" rename="dow30_current" input="Source_" />
+                    <SelectField field="Source_rev_msft" selected="True" rename="rev_msft_current" input="Source_" />
+                    <SelectField field="Source_mkt_cycle" selected="True" rename="mkt_cycle_current" input="Source_" />
+                    <SelectField field="Source_econ_cycle" selected="True" rename="econ_cycle_current" input="Source_" />
+                    <SelectField field="Source_LOG_rev_msft" selected="True" rename="LOG_rev_msft_current" input="Source_" />
+                    <SelectField field="Source_LOG_rev_ibm" selected="True" rename="LOG_rev_ibm_current" input="Source_" />
+                    <SelectField field="Source_Squared_nasdaq" selected="True" rename="Squared_nasdaq_current" input="Source_" />
+                    <SelectField field="Source_Squared_sp500" selected="True" rename="Squared_sp500_current" input="Source_" />
+                    <SelectField field="Source_Squared_dow30" selected="True" rename="Squared_dow30_current" input="Source_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="146">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3462" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="64" MaxRecords="">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\data1.hyper</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>data1.hyper</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="147">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3846" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="64" MaxRecords="">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\data2.hyper</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>data2.hyper</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="148">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3402" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="64" MaxRecords="">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\project\coefficient.hyper</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>coefficient.hyper</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="65" y="54" width="194.8527" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Convert Daily to Monthly</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="90.00002" y="98" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>MSFT_daily_new.xlsx
+Table=`Sheet 1 - MSFT-2$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="MSFT" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="F2" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="F3" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="F4" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="F5" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+            <Position x="210" y="109.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RenameMode>FirstRow</RenameMode>
+              <Fields orderChanged="False">
+                <Field name="MSFT" />
+                <Field name="F2" />
+                <Field name="F3" />
+                <Field name="F4" />
+                <Field name="*Unknown" />
+              </Fields>
+              <Expression />
+              <FirstRow>
+                <OnError>Warn</OnError>
+              </FirstRow>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="Adj_Close" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="nasdaq" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="sp500" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+                <Field name="dow30" size="255" source="File: C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_daily_new.xlsx|||`Sheet 1 - MSFT-2$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="109.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="True" type="Date" size="10" />
+                <SelectField field="Adj_Close" selected="True" type="Double" size="8" />
+                <SelectField field="Nasdaq" selected="True" type="Double" size="8" />
+                <SelectField field="SP500" selected="True" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="570" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeMonth([Date])" field="Month" size="8" type="Double" />
+                <FormulaField expression="DateTimeYear([Date])" field="Year" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Month = DateTimeMonth([Date])
+Year = DateTimeYear([Date])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="666" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Year" order="Ascending" />
+                <Field field="Month" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Year - Ascending
+Month - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="762" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Last</Mode>
+              <N>1</N>
+              <GroupFields orderChanged="False">
+                <Field name="Year" />
+                <Field name="Month" />
+              </GroupFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="870" y="121.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="dow30" selected="True" type="Double" size="8" />
+                <SelectField field="Month" selected="False" />
+                <SelectField field="Year" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="966" y="121.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">C:\Users\doemu\Desktop\BANA290 PREDICTIVE\final\MSFT_monthly_new.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>MSFT_monthly_new.xlsx
+Table=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="112.9999" y="473.9998" width="107.5456" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>ARIMA</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="78">
+          <GuiSettings>
+            <Position x="150" y="541.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="mod_name">rev_msft</Value>
+              <Value name="target_field">rev_msft</Value>
+              <Value name="use_covar">False</Value>
+              <Value name="covars">""</Value>
+              <Value name="use_covar_mean">True</Value>
+              <Value name="use_covar_diff">False</Value>
+              <Value name="freq_hourly">False</Value>
+              <Value name="freq_daily">False</Value>
+              <Value name="freq_weekdays">False</Value>
+              <Value name="freq_weekly">False</Value>
+              <Value name="freq_monthly">True</Value>
+              <Value name="freq_quarterly">False</Value>
+              <Value name="freq_annually">False</Value>
+              <Value name="freq_other">False</Value>
+              <Value name="custom_auto">False</Value>
+              <Value name="first_dif">False</Value>
+              <Value name="level_first_dif">0</Value>
+              <Value name="max_p">2</Value>
+              <Value name="max_q">2</Value>
+              <Value name="seas_dif">False</Value>
+              <Value name="level_seas_dif">0</Value>
+              <Value name="s_max_P">1</Value>
+              <Value name="s_max_Q">1</Value>
+              <Value name="ic_aic">False</Value>
+              <Value name="ic_aicc">True</Value>
+              <Value name="ic_bic">False</Value>
+              <Value name="full_enum">False</Value>
+              <Value name="max_order">5</Value>
+              <Value name="m_core">False</Value>
+              <Value name="drift">True</Value>
+              <Value name="box_cox">False</Value>
+              <Value name="lambda">0.00</Value>
+              <Value name="full_custom">False</Value>
+              <Value name="p">0</Value>
+              <Value name="d">0</Value>
+              <Value name="q">0</Value>
+              <Value name="S_P">0</Value>
+              <Value name="S_D">0</Value>
+              <Value name="S_Q">0</Value>
+              <Value name="m_drift">False</Value>
+              <Value name="m_box_cox">False</Value>
+              <Value name="m_lambda">0.00</Value>
+              <Value name="series_start">False</Value>
+              <Value name="start_year">1980</Value>
+              <Value name="start_month_qtr">1</Value>
+              <Value name="forecast_periods">12</Value>
+              <Value name="alteryx.week.US">True</Value>
+              <Value name="alteryx.week.UK">False</Value>
+              <Value name="alteryx.week.ISO8601">False</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.00</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\ARIMA.yxmc" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings>
+            <Position x="258" y="529.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="forecast">forecast_rev_msft</Value>
+              <Value name="large_conf">95</Value>
+              <Value name="small_conf">80</Value>
+              <Value name="horizon">10</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Period" source="R-DATA:" type="Double" />
+                <Field name="Sub_Period" source="R-DATA:" type="Int32" />
+                <Field name="forecast_rev_msft" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_msft_high_95" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_msft_high_80" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_msft_low_80" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_msft_low_95" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Interactive Viz">
+              <RecordInfo>
+                <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Report">
+              <RecordInfo>
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\TS_Forecast.yxmc" />
+        </Node>
+        <Node ToolID="80">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="366" y="517.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_2288_708fce21cf254d1baf0f67ff2244714a_\Engine_10096_019c17dd2e124635905b0bacf6137dbf_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings>
+            <Position x="138" y="637.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="mod_name">rev_appl</Value>
+              <Value name="target_field">rev_appl</Value>
+              <Value name="use_covar">False</Value>
+              <Value name="covars">""</Value>
+              <Value name="use_covar_mean">True</Value>
+              <Value name="use_covar_diff">False</Value>
+              <Value name="freq_hourly">False</Value>
+              <Value name="freq_daily">False</Value>
+              <Value name="freq_weekdays">False</Value>
+              <Value name="freq_weekly">False</Value>
+              <Value name="freq_monthly">True</Value>
+              <Value name="freq_quarterly">False</Value>
+              <Value name="freq_annually">False</Value>
+              <Value name="freq_other">False</Value>
+              <Value name="custom_auto">False</Value>
+              <Value name="first_dif">False</Value>
+              <Value name="level_first_dif">0</Value>
+              <Value name="max_p">2</Value>
+              <Value name="max_q">2</Value>
+              <Value name="seas_dif">False</Value>
+              <Value name="level_seas_dif">0</Value>
+              <Value name="s_max_P">1</Value>
+              <Value name="s_max_Q">1</Value>
+              <Value name="ic_aic">False</Value>
+              <Value name="ic_aicc">True</Value>
+              <Value name="ic_bic">False</Value>
+              <Value name="full_enum">False</Value>
+              <Value name="max_order">5</Value>
+              <Value name="m_core">False</Value>
+              <Value name="drift">True</Value>
+              <Value name="box_cox">False</Value>
+              <Value name="lambda">0.00</Value>
+              <Value name="full_custom">False</Value>
+              <Value name="p">0</Value>
+              <Value name="d">0</Value>
+              <Value name="q">0</Value>
+              <Value name="S_P">0</Value>
+              <Value name="S_D">0</Value>
+              <Value name="S_Q">0</Value>
+              <Value name="m_drift">False</Value>
+              <Value name="m_box_cox">False</Value>
+              <Value name="m_lambda">0.00</Value>
+              <Value name="series_start">False</Value>
+              <Value name="start_year">1980</Value>
+              <Value name="start_month_qtr">1</Value>
+              <Value name="forecast_periods">12</Value>
+              <Value name="alteryx.week.US">True</Value>
+              <Value name="alteryx.week.UK">False</Value>
+              <Value name="alteryx.week.ISO8601">False</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.00</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\ARIMA.yxmc" />
+        </Node>
+        <Node ToolID="82">
+          <GuiSettings>
+            <Position x="246" y="625.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="forecast">forecast_rev_appl</Value>
+              <Value name="large_conf">95</Value>
+              <Value name="small_conf">80</Value>
+              <Value name="horizon">10</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Period" source="R-DATA:" type="Double" />
+                <Field name="Sub_Period" source="R-DATA:" type="Int32" />
+                <Field name="forecast_rev_appl" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_appl_high_95" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_appl_high_80" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_appl_low_80" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_appl_low_95" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Interactive Viz">
+              <RecordInfo>
+                <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Report">
+              <RecordInfo>
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\TS_Forecast.yxmc" />
+        </Node>
+        <Node ToolID="83">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="354" y="613.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_2288_708fce21cf254d1baf0f67ff2244714a_\Engine_10096_317111e4536944f795c54f671464ecdd_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings>
+            <Position x="138" y="721.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="mod_name">rev_ibm</Value>
+              <Value name="target_field">rev_ibm</Value>
+              <Value name="use_covar">False</Value>
+              <Value name="covars">""</Value>
+              <Value name="use_covar_mean">True</Value>
+              <Value name="use_covar_diff">False</Value>
+              <Value name="freq_hourly">False</Value>
+              <Value name="freq_daily">False</Value>
+              <Value name="freq_weekdays">False</Value>
+              <Value name="freq_weekly">False</Value>
+              <Value name="freq_monthly">True</Value>
+              <Value name="freq_quarterly">False</Value>
+              <Value name="freq_annually">False</Value>
+              <Value name="freq_other">False</Value>
+              <Value name="custom_auto">False</Value>
+              <Value name="first_dif">False</Value>
+              <Value name="level_first_dif">0</Value>
+              <Value name="max_p">2</Value>
+              <Value name="max_q">2</Value>
+              <Value name="seas_dif">False</Value>
+              <Value name="level_seas_dif">0</Value>
+              <Value name="s_max_P">1</Value>
+              <Value name="s_max_Q">1</Value>
+              <Value name="ic_aic">False</Value>
+              <Value name="ic_aicc">True</Value>
+              <Value name="ic_bic">False</Value>
+              <Value name="full_enum">False</Value>
+              <Value name="max_order">5</Value>
+              <Value name="m_core">False</Value>
+              <Value name="drift">True</Value>
+              <Value name="box_cox">False</Value>
+              <Value name="lambda">0.00</Value>
+              <Value name="full_custom">False</Value>
+              <Value name="p">0</Value>
+              <Value name="d">0</Value>
+              <Value name="q">0</Value>
+              <Value name="S_P">0</Value>
+              <Value name="S_D">0</Value>
+              <Value name="S_Q">0</Value>
+              <Value name="m_drift">False</Value>
+              <Value name="m_box_cox">False</Value>
+              <Value name="m_lambda">0.00</Value>
+              <Value name="series_start">False</Value>
+              <Value name="start_year">1980</Value>
+              <Value name="start_month_qtr">1</Value>
+              <Value name="forecast_periods">12</Value>
+              <Value name="alteryx.week.US">True</Value>
+              <Value name="alteryx.week.UK">False</Value>
+              <Value name="alteryx.week.ISO8601">False</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.00</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\ARIMA.yxmc" />
+        </Node>
+        <Node ToolID="85">
+          <GuiSettings>
+            <Position x="246" y="709.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="forecast">forecast_rev_ibm</Value>
+              <Value name="large_conf">95</Value>
+              <Value name="small_conf">80</Value>
+              <Value name="horizon">10</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Period" source="R-DATA:" type="Double" />
+                <Field name="Sub_Period" source="R-DATA:" type="Int32" />
+                <Field name="forecast_rev_ibm" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_ibm_high_95" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_ibm_high_80" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_ibm_low_80" source="R-DATA:" type="Double" />
+                <Field name="forecast_rev_ibm_low_95" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Interactive Viz">
+              <RecordInfo>
+                <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Report">
+              <RecordInfo>
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\TS_Forecast.yxmc" />
+        </Node>
+        <Node ToolID="86">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="354" y="697.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_2288_708fce21cf254d1baf0f67ff2244714a_\Engine_10096_8a76eaeae791486fb109f1fa8e03c3cc_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="93">
+          <GuiSettings>
+            <Position x="138" y="793.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="mod_name">mkt_cycle</Value>
+              <Value name="target_field">mkt_cycle</Value>
+              <Value name="use_covar">False</Value>
+              <Value name="covars">""</Value>
+              <Value name="use_covar_mean">True</Value>
+              <Value name="use_covar_diff">False</Value>
+              <Value name="freq_hourly">False</Value>
+              <Value name="freq_daily">False</Value>
+              <Value name="freq_weekdays">False</Value>
+              <Value name="freq_weekly">False</Value>
+              <Value name="freq_monthly">True</Value>
+              <Value name="freq_quarterly">False</Value>
+              <Value name="freq_annually">False</Value>
+              <Value name="freq_other">False</Value>
+              <Value name="custom_auto">False</Value>
+              <Value name="first_dif">False</Value>
+              <Value name="level_first_dif">0</Value>
+              <Value name="max_p">2</Value>
+              <Value name="max_q">2</Value>
+              <Value name="seas_dif">False</Value>
+              <Value name="level_seas_dif">0</Value>
+              <Value name="s_max_P">1</Value>
+              <Value name="s_max_Q">1</Value>
+              <Value name="ic_aic">False</Value>
+              <Value name="ic_aicc">True</Value>
+              <Value name="ic_bic">False</Value>
+              <Value name="full_enum">False</Value>
+              <Value name="max_order">5</Value>
+              <Value name="m_core">False</Value>
+              <Value name="drift">True</Value>
+              <Value name="box_cox">False</Value>
+              <Value name="lambda">0.00</Value>
+              <Value name="full_custom">False</Value>
+              <Value name="p">0</Value>
+              <Value name="d">0</Value>
+              <Value name="q">0</Value>
+              <Value name="S_P">0</Value>
+              <Value name="S_D">0</Value>
+              <Value name="S_Q">0</Value>
+              <Value name="m_drift">False</Value>
+              <Value name="m_box_cox">False</Value>
+              <Value name="m_lambda">0.00</Value>
+              <Value name="series_start">False</Value>
+              <Value name="start_year">1980</Value>
+              <Value name="start_month_qtr">1</Value>
+              <Value name="forecast_periods">12</Value>
+              <Value name="alteryx.week.US">True</Value>
+              <Value name="alteryx.week.UK">False</Value>
+              <Value name="alteryx.week.ISO8601">False</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.00</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\ARIMA.yxmc" />
+        </Node>
+        <Node ToolID="94">
+          <GuiSettings>
+            <Position x="246" y="781.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="forecast">mkt_cycle</Value>
+              <Value name="large_conf">95</Value>
+              <Value name="small_conf">80</Value>
+              <Value name="horizon">10</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Period" source="R-DATA:" type="Double" />
+                <Field name="Sub_Period" source="R-DATA:" type="Int32" />
+                <Field name="mkt_cycle" source="R-DATA:" type="Double" />
+                <Field name="mkt_cycle_high_95" source="R-DATA:" type="Double" />
+                <Field name="mkt_cycle_high_80" source="R-DATA:" type="Double" />
+                <Field name="mkt_cycle_low_80" source="R-DATA:" type="Double" />
+                <Field name="mkt_cycle_low_95" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Interactive Viz">
+              <RecordInfo>
+                <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Report">
+              <RecordInfo>
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\TS_Forecast.yxmc" />
+        </Node>
+        <Node ToolID="95">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="354" y="769.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_2288_708fce21cf254d1baf0f67ff2244714a_\Engine_10096_677bccae92cc41a1ad48aa7104e96693_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="96">
+          <GuiSettings>
+            <Position x="138" y="865.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="mod_name">econ_cycle</Value>
+              <Value name="target_field">econ_cycle</Value>
+              <Value name="use_covar">False</Value>
+              <Value name="covars">""</Value>
+              <Value name="use_covar_mean">True</Value>
+              <Value name="use_covar_diff">False</Value>
+              <Value name="freq_hourly">False</Value>
+              <Value name="freq_daily">False</Value>
+              <Value name="freq_weekdays">False</Value>
+              <Value name="freq_weekly">False</Value>
+              <Value name="freq_monthly">True</Value>
+              <Value name="freq_quarterly">False</Value>
+              <Value name="freq_annually">False</Value>
+              <Value name="freq_other">False</Value>
+              <Value name="custom_auto">False</Value>
+              <Value name="first_dif">False</Value>
+              <Value name="level_first_dif">0</Value>
+              <Value name="max_p">2</Value>
+              <Value name="max_q">2</Value>
+              <Value name="seas_dif">False</Value>
+              <Value name="level_seas_dif">0</Value>
+              <Value name="s_max_P">1</Value>
+              <Value name="s_max_Q">1</Value>
+              <Value name="ic_aic">False</Value>
+              <Value name="ic_aicc">True</Value>
+              <Value name="ic_bic">False</Value>
+              <Value name="full_enum">False</Value>
+              <Value name="max_order">5</Value>
+              <Value name="m_core">False</Value>
+              <Value name="drift">True</Value>
+              <Value name="box_cox">False</Value>
+              <Value name="lambda">0.00</Value>
+              <Value name="full_custom">False</Value>
+              <Value name="p">0</Value>
+              <Value name="d">0</Value>
+              <Value name="q">0</Value>
+              <Value name="S_P">0</Value>
+              <Value name="S_D">0</Value>
+              <Value name="S_Q">0</Value>
+              <Value name="m_drift">False</Value>
+              <Value name="m_box_cox">False</Value>
+              <Value name="m_lambda">0.00</Value>
+              <Value name="series_start">False</Value>
+              <Value name="start_year">1980</Value>
+              <Value name="start_month_qtr">1</Value>
+              <Value name="forecast_periods">12</Value>
+              <Value name="alteryx.week.US">True</Value>
+              <Value name="alteryx.week.UK">False</Value>
+              <Value name="alteryx.week.ISO8601">False</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.00</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\ARIMA.yxmc" />
+        </Node>
+        <Node ToolID="97">
+          <GuiSettings>
+            <Position x="246" y="853.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="forecast">econ_cycle</Value>
+              <Value name="large_conf">95</Value>
+              <Value name="small_conf">80</Value>
+              <Value name="horizon">10</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Period" source="R-DATA:" type="Double" />
+                <Field name="Sub_Period" source="R-DATA:" type="Int32" />
+                <Field name="econ_cycle" source="R-DATA:" type="Double" />
+                <Field name="econ_cycle_high_95" source="R-DATA:" type="Double" />
+                <Field name="econ_cycle_high_80" source="R-DATA:" type="Double" />
+                <Field name="econ_cycle_low_80" source="R-DATA:" type="Double" />
+                <Field name="econ_cycle_low_95" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Interactive Viz">
+              <RecordInfo>
+                <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Report">
+              <RecordInfo>
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\TS_Forecast.yxmc" />
+        </Node>
+        <Node ToolID="98">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="354" y="841.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_2288_708fce21cf254d1baf0f67ff2244714a_\Engine_10096_17a3e843b14d44acbc1fbf4f000fa03b_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="737" y="1030" width="698" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Boosting_MODEL_4_DISCARD</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="68">
+          <GuiSettings Plugin="Score">
+            <Position x="895.0001" y="1166" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="modelChoice">Local Model</Value>
+              <Value name="score field">
+              </Value>
+              <Value name="is oversampled">False</Value>
+              <Value name="oversampled value">
+              </Value>
+              <Value name="original percent">2</Value>
+              <Value name="log y">False</Value>
+              <Value name="prediction.interval">False</Value>
+              <Value name="interval.level">95</Value>
+              <Value name="append.xdf">False</Value>
+              <Value name="num.records">256000</Value>
+              <Value name="credentials">
+              </Value>
+              <Value name="models">
+              </Value>
+              <Value name="page">
+              </Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="modelDetailJSON">
+              </Value>
+              <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+              <Value name="promoteURL">
+              </Value>
+              <Value name="username">
+              </Value>
+              <Value name="model_name">
+              </Value>
+              <Value name="model_owner">
+              </Value>
+              <Value name="apiKey">
+              </Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+        </Node>
+        <Node ToolID="69">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="835.0001" y="1202" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_7940_d9a26850c79e4756af7a77dd6347023b_\Engine_10096_4b3fca7d9381401398cd7310f2e9eb97_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="70">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1015" y="1166" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[LOG_Adj_Close]-[X]" field="Error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Error = [LOG_Adj_Close]-[X]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings>
+            <Position x="1123" y="1166" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="field">Error</Value>
+              <Value name="breaks">auto</Value>
+              <Value name="density">False</Value>
+              <Value name="scale">1.0</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Histogram.yxmc" />
+        </Node>
+        <Node ToolID="72">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1231" y="1166" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_7940_d9a26850c79e4756af7a77dd6347023b_\Engine_10096_715e67db06b34c7d81d87d172a408313_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1243" y="1082" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Error]*[Error]" field="Squared_error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Squared_error = [Error]*[Error]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1351" y="1082" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Squared_error" action="Avg" rename="Mean_Squared_error" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings>
+            <Position x="763" y="1154" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="model.name" />
+              <Value name="select.target">LOG_Adj_Close</Value>
+              <Value name="select.predictors">Adj_Close=False,nasdaq=True,sp500=True,dow30=True,rev_msft=True,rev_appl=True,rev_ibm=True,GDP_change=True,mkt_cycle=True,econ_cycle=True,int_rate=True,c_sentiment=True,LOG_Adj_Close=False,LOG_nasdaq=True,LOG_sp500=True,LOG_dow30=True,LOG_rev_msft=True,LOG_rev_appl=True,LOG_rev_ibm=True,LOG_c_sentiment=True,Squared_nasdaq=True,Squared_sp500=True,Squared_dow30=True</Value>
+              <Value name="use.weights">False</Value>
+              <Value name="select.weights">Adj_Close</Value>
+              <Value name="marginal.plots">False</Value>
+              <Value name="plot.min.importance">2.5</Value>
+              <Value name="type.distribution">False</Value>
+              <Value name="type.continuous">True</Value>
+              <Value name="dist.gaussian">True</Value>
+              <Value name="dist.laplace">False</Value>
+              <Value name="dist.t">False</Value>
+              <Value name="t.df">4</Value>
+              <Value name="type.count">False</Value>
+              <Value name="type.binomial">False</Value>
+              <Value name="dist.bernoulli">True</Value>
+              <Value name="dist.adaboost">False</Value>
+              <Value name="type.multinomial">False</Value>
+              <Value name="n.trees">4000</Value>
+              <Value name="assess.cv">True</Value>
+              <Value name="num.folds">5</Value>
+              <Value name="n.cores">1</Value>
+              <Value name="assess.test">False</Value>
+              <Value name="train.fraction">50.0</Value>
+              <Value name="assess.oob">False</Value>
+              <Value name="bag.fraction">50.0</Value>
+              <Value name="shrinkage">0.0020</Value>
+              <Value name="interaction.depth">1</Value>
+              <Value name="n.minobsinnode">10</Value>
+              <Value name="rand.seed">1</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Boosted_Model.yxmc" />
+        </Node>
+        <Node ToolID="120">
+          <GuiSettings>
+            <Position x="762" y="1074" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="estimation pct">80</Value>
+              <Value name="validation pct">20</Value>
+              <Value name="rand seed">1</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Create_Samples.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="845.9999" y="73.9998" width="781.0001" height="284" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>regression_MODEL_1</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="18">
+          <GuiSettings Plugin="Linear_Regression">
+            <Position x="870.9999" y="213.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="curPage">Home</Value>
+              <Value name="curTab">advanced</Value>
+              <Value name="standardize_pred">True</Value>
+              <Value name="internal_cv">True</Value>
+              <Value name="display_graphs">True</Value>
+              <Value name="set_seed_internal_cv">True</Value>
+              <Value name="set_seed_external_cv">True</Value>
+              <Value name="lambda_1se">True</Value>
+              <Value name="lambda_min">False</Value>
+              <Value name="Model Name">Linear_Regression_1</Value>
+              <Value name="Y Var">LOG_Adj_Close</Value>
+              <Value name="X Vars">nasdaq,sp500,dow30,rev_msft,rev_appl,rev_ibm,GDP_change,mkt_cycle,econ_cycle,int_rate,c_sentiment,LOG_nasdaq,LOG_sp500,LOG_dow30,LOG_rev_msft,LOG_rev_appl,LOG_rev_ibm,LOG_c_sentiment,Squared_nasdaq,Squared_sp500,Squared_dow30</Value>
+              <Value name="Omit Constant">False</Value>
+              <Value name="Use Weights">False</Value>
+              <Value name="Weight Vec" />
+              <Value name="regularization">False</Value>
+              <Value name="alpha">0.5</Value>
+              <Value name="nfolds">5</Value>
+              <Value name="lambda">lambda_1se</Value>
+              <Value name="seed_internal_cv">1</Value>
+              <Value name="lambda_no_cv">0.5</Value>
+              <Value name="external_cv">False</Value>
+              <Value name="nfolds_external">5</Value>
+              <Value name="numberTrials">3</Value>
+              <Value name="external_seed_value">1</Value>
+              <Value name="graph.resolution">1x</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Linear_Regression_1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="967" y="213.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_11900_6e75c420379f4f9fa3a571478c3ca4d1_\Engine_10096_78b99914fc6a4fb6bee793e9b193d24c_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings>
+            <Position x="1027" y="141.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="New Model" />
+              <Value name="both">True</Value>
+              <Value name="backward">False</Value>
+              <Value name="AIC">True</Value>
+              <Value name="BIC">False</Value>
+              <Value name="graph.resolution">1x</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Stepwise.yxmc" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="979" y="273.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_11900_6e75c420379f4f9fa3a571478c3ca4d1_\Engine_10096_f3c7a8f3eaf048329f3d9f1b671fbf54_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1099" y="177.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_11900_6e75c420379f4f9fa3a571478c3ca4d1_\Engine_10096_b82d6590be9b48b78d84f392b761813f_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="Score">
+            <Position x="1195" y="177.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="modelChoice">Local Model</Value>
+              <Value name="score field">score_1</Value>
+              <Value name="is oversampled">False</Value>
+              <Value name="oversampled value">
+              </Value>
+              <Value name="original percent">2</Value>
+              <Value name="log y">False</Value>
+              <Value name="prediction.interval">False</Value>
+              <Value name="interval.level">95</Value>
+              <Value name="append.xdf">False</Value>
+              <Value name="num.records">256000</Value>
+              <Value name="credentials">
+              </Value>
+              <Value name="models">
+              </Value>
+              <Value name="page">
+              </Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="modelDetailJSON">
+              </Value>
+              <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+              <Value name="promoteURL">
+              </Value>
+              <Value name="username">
+              </Value>
+              <Value name="model_name">
+              </Value>
+              <Value name="model_owner">
+              </Value>
+              <Value name="apiKey">
+              </Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1327" y="177.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[LOG_Adj_Close]-[score_1]" field="Error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Error = [LOG_Adj_Close]-[score_1]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings>
+            <Position x="1435" y="177.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="field">Error</Value>
+              <Value name="breaks">auto</Value>
+              <Value name="density">False</Value>
+              <Value name="scale">1.0</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Histogram.yxmc" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1543" y="177.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_11900_6e75c420379f4f9fa3a571478c3ca4d1_\Engine_10096_b822bc480eee4acd9dc3549badd66d1a_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="62">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1399" y="117.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Error]*[Error]" field="Squared_error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Squared_error = [Error]*[Error]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1507" y="117.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Squared_error" action="Avg" rename="Mean_Squared_error" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="846" y="678" width="746" height="259" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Forest_MODEL_3</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="49">
+          <GuiSettings>
+            <Position x="896.0001" y="806.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Model Name">Random_Forest_1</Value>
+              <Value name="Y Var">LOG_Adj_Close</Value>
+              <Value name="X Vars">nasdaq + sp500 + dow30 + rev_msft + rev_appl + rev_ibm + GDP_change + mkt_cycle + econ_cycle + int_rate + c_sentiment + LOG_nasdaq + LOG_sp500 + LOG_dow30 + LOG_rev_msft + LOG_rev_appl + LOG_rev_ibm + LOG_c_sentiment + Squared_nasdaq + Squared_sp500 + Squared_dow30</Value>
+              <Value name="Num Trees">500</Value>
+              <Value name="Custom Num Vars">False</Value>
+              <Value name="Num Vars">3</Value>
+              <Value name="model.size">False</Value>
+              <Value name="total.nodes">100</Value>
+              <Value name="max.depth">10</Value>
+              <Value name="node.size">5</Value>
+              <Value name="replace">True</Value>
+              <Value name="samp.rate">100</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Forest_Model.yxmc" />
+        </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="Score">
+            <Position x="1052" y="806" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="modelChoice">Local Model</Value>
+              <Value name="score field">
+              </Value>
+              <Value name="is oversampled">False</Value>
+              <Value name="oversampled value">
+              </Value>
+              <Value name="original percent">2</Value>
+              <Value name="log y">False</Value>
+              <Value name="prediction.interval">False</Value>
+              <Value name="interval.level">95</Value>
+              <Value name="append.xdf">False</Value>
+              <Value name="num.records">256000</Value>
+              <Value name="credentials">
+              </Value>
+              <Value name="models">
+              </Value>
+              <Value name="page">
+              </Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="modelDetailJSON">
+              </Value>
+              <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+              <Value name="promoteURL">
+              </Value>
+              <Value name="username">
+              </Value>
+              <Value name="model_name">
+              </Value>
+              <Value name="model_owner">
+              </Value>
+              <Value name="apiKey">
+              </Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="992" y="842" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_4d09bc7ce22f4aef87aab24bbda18f2b_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1172" y="806" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[LOG_Adj_Close]-[X]" field="Error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Error = [LOG_Adj_Close]-[X]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings>
+            <Position x="1280" y="806" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="field">Error</Value>
+              <Value name="breaks">auto</Value>
+              <Value name="density">False</Value>
+              <Value name="scale">1.0</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Histogram.yxmc" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1388" y="806" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_9070a6986e6e4042a3d3c01da4d38454_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="57">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1400" y="722" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Error]*[Error]" field="Squared_error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Squared_error = [Error]*[Error]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1508" y="722" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Squared_error" action="Avg" rename="Mean_Squared_error" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="119">
+          <GuiSettings>
+            <Position x="871" y="730.0002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="estimation pct">80</Value>
+              <Value name="validation pct">20</Value>
+              <Value name="rand seed">1</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Create_Samples.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="834" y="361.9998" width="781" height="280" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>regression_MODEL_2</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="38">
+          <GuiSettings Plugin="Linear_Regression">
+            <Position x="859" y="497.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="curPage">Home</Value>
+              <Value name="curTab">advanced</Value>
+              <Value name="standardize_pred">True</Value>
+              <Value name="internal_cv">True</Value>
+              <Value name="display_graphs">True</Value>
+              <Value name="set_seed_internal_cv">True</Value>
+              <Value name="set_seed_external_cv">True</Value>
+              <Value name="lambda_1se">True</Value>
+              <Value name="lambda_min">False</Value>
+              <Value name="Model Name">Linear_Regression_3</Value>
+              <Value name="Y Var">LOG_Adj_Close</Value>
+              <Value name="X Vars">nasdaq,sp500,dow30,rev_msft,rev_appl,rev_ibm,GDP_change,mkt_cycle,econ_cycle,int_rate,c_sentiment,LOG_nasdaq,LOG_sp500,LOG_dow30,LOG_rev_msft,LOG_rev_appl,LOG_rev_ibm,LOG_c_sentiment</Value>
+              <Value name="Omit Constant">False</Value>
+              <Value name="Use Weights">False</Value>
+              <Value name="Weight Vec" />
+              <Value name="regularization">False</Value>
+              <Value name="alpha">0.5</Value>
+              <Value name="nfolds">5</Value>
+              <Value name="lambda">lambda_1se</Value>
+              <Value name="seed_internal_cv">1</Value>
+              <Value name="lambda_no_cv">0.5</Value>
+              <Value name="external_cv">False</Value>
+              <Value name="nfolds_external">5</Value>
+              <Value name="numberTrials">3</Value>
+              <Value name="external_seed_value">1</Value>
+              <Value name="graph.resolution">1x</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Linear_Regression_3</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="955" y="497.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_886c520e31e54f2aa449c0e6057482ae_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings>
+            <Position x="1015" y="425.9997" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="New Model" />
+              <Value name="both">True</Value>
+              <Value name="backward">False</Value>
+              <Value name="AIC">True</Value>
+              <Value name="BIC">False</Value>
+              <Value name="graph.resolution">1x</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Stepwise.yxmc" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="967" y="557.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_af0e409397ac40e48acb603fef88e134_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1087" y="461.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_a42029b96540421d9afe1aeb327d4e0f_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="Score">
+            <Position x="1183" y="461.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="modelChoice">Local Model</Value>
+              <Value name="score field">score_3</Value>
+              <Value name="is oversampled">False</Value>
+              <Value name="oversampled value">
+              </Value>
+              <Value name="original percent">2</Value>
+              <Value name="log y">False</Value>
+              <Value name="prediction.interval">False</Value>
+              <Value name="interval.level">95</Value>
+              <Value name="append.xdf">False</Value>
+              <Value name="num.records">256000</Value>
+              <Value name="credentials">
+              </Value>
+              <Value name="models">
+              </Value>
+              <Value name="page">
+              </Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="modelDetailJSON">
+              </Value>
+              <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+              <Value name="promoteURL">
+              </Value>
+              <Value name="username">
+              </Value>
+              <Value name="model_name">
+              </Value>
+              <Value name="model_owner">
+              </Value>
+              <Value name="apiKey">
+              </Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1315" y="461.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[LOG_Adj_Close]-[score_3]" field="Error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Error = [LOG_Adj_Close]-[score_3]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings>
+            <Position x="1423" y="461.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="field">Error</Value>
+              <Value name="breaks">auto</Value>
+              <Value name="density">False</Value>
+              <Value name="scale">1.0</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Histogram.yxmc" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1531" y="461.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\doemu\AppData\Local\Temp\Engine_15512_e12fc7b9aca44a2a8144c9b0d52d99d4_\Engine_10096_30237a1d8f1a4580b6a62daaeb91ec47_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1398" y="405.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Error]*[Error]" field="Squared_error" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Squared_error = [Error]*[Error]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1506" y="405.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Squared_error" action="Avg" rename="Mean_Squared_error" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="125" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="20" Connection="Left Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="20" Connection="Right Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="24" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="24" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="120" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="40" Connection="Left Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="40" Connection="Right Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="43" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="43" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="137" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="142" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="137" Connection="Output" />
+      <Destination ToolID="142" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="141" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Output" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Output" />
+      <Destination ToolID="104" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="104" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Output" />
+      <Destination ToolID="105" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="105" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Output" />
+      <Destination ToolID="108" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="108" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="105" Connection="Output" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="135" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="107" Connection="Output" />
+      <Destination ToolID="113" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Output" />
+      <Destination ToolID="110" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="110" Connection="Output" />
+      <Destination ToolID="114" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="112" Connection="Output" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="113" Connection="Output" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="114" Connection="Output" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="116" Connection="Output" />
+      <Destination ToolID="117" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="118" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="125" Connection="Output" />
+      <Destination ToolID="126" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="125" Connection="Correlation Matrix" />
+      <Destination ToolID="127" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="128" Connection="Output" />
+      <Destination ToolID="129" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="129" Connection="Output" />
+      <Destination ToolID="148" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="131" Connection="Output" />
+      <Destination ToolID="134" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="132" Connection="Output" />
+      <Destination ToolID="134" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="Output" />
+      <Destination ToolID="143" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="133" Connection="Output" />
+      <Destination ToolID="132" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="134" Connection="Output" />
+      <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="135" Connection="Output" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="141" Connection="Output" />
+      <Destination ToolID="144" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="143" Connection="Output" />
+      <Destination ToolID="144" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="142" Connection="Join" />
+      <Destination ToolID="145" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="144" Connection="Output" />
+      <Destination ToolID="145" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="145" Connection="Output" />
+      <Destination ToolID="147" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="Output" />
+      <Destination ToolID="85" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="85" Connection="Output" />
+      <Destination ToolID="86" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="93" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="94" Connection="Output" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="68" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="120" Connection="Validation" />
+      <Destination ToolID="68" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Report" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="120" Connection="Estimation" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Reports" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Interactive Report" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Reports" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="128" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="130" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="51" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Validation" />
+      <Destination ToolID="51" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Reports" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Estimation" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Reports" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Interactive Report" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Reports" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>MSFT_yuzi_2001</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
